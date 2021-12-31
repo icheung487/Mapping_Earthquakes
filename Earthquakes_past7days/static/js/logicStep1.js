@@ -36,11 +36,11 @@ L.control.layers(baseMaps).addTo(map);
 
 
 // Accessing the Toronto neighborhoods GeoJSON URL.
-let torontoHoods = "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.geojson";
+let weekly_earthquakes = "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.geojson";
 
 
 // Retrieve the earthquake GeoJSON data.
-d3.json(torontoHoods).then(function(data) {
+d3.json(weekly_earthquakes).then(function(data) {
   // Creating a GeoJSON layer with the retrieved data.
   L.geoJSON(data).addTo(map);
 });
