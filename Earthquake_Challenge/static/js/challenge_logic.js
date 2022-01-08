@@ -151,7 +151,7 @@ function getColor(magnitude) {
     return "orange";
   };
 }
-
+console.log("running test")
   
 // 6. Use the function that determines the radius of the earthquake marker based on its magnitude.
 function getRadius(magnitude) {
