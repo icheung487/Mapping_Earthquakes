@@ -102,7 +102,6 @@ d3.json(weekly_earthquakes).then(function(data) {
 
 // Creating a GeoJSON layer with the retrieved data.
 L.geoJSON(data, {
-
     // We turn each feature into a circleMarker on the map.
     pointToLayer: function(feature, latlng) {
         console.log(data);
@@ -120,36 +119,3 @@ L.geoJSON(data, {
 // Then we add the earthquake layer to our map.
   earthquakes.addTo(map);
 });
-
-// Create a legend control object.
-let legend = L.control({
-  position: "bottomright"
-});
-
-// Then add all the details for the legend.
-legend.onAdd = function() {
-  var div = L.DomUtil.create("div", "info legend");
-
-    var magnitudes = [0, 1, 2, 3, 4, 5];
-    var colors = [
-      "#98ee00",
-      "#d4ee00",
-      "#eecc00",
-      "#ee9c00",
-      "#ea822c",
-      "#ea2c2c"
-    ];
-    labels = [];
-
-// Looping through our intervals to generate a label with a colored square for each interval.
-for (var i = 0; i < magnitudes.length; i++) {
-  console.log(colors[i]);
-  div.innerHTML +=
-  "<i style='background: " + colors[i] + "'></i> " +
-  magnitudes[i] + (magnitudes[i + 1] ? "&ndash;" + magnitudes[i + 1] + "<br>" : "+");
-  }
-  return div;
-};
-
-legend.addTo(map);
-
