@@ -185,4 +185,3 @@ legend.onAdd = function() {
   d3.json().then(() {
     
   });
-});

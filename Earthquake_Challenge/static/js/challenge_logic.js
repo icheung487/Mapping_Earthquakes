@@ -142,22 +142,23 @@ function styleInfo(feature) {
 // 5. Change the color function to use three colors for the major earthquakes based on the magnitude of the earthquake.
 function getColor(magnitude) {
   if (magnitude > 6) {
-    return "#ea2c2c";
+    return "#A01102";
   }
-  if (magnitude >= 5) {s
-    return "#fa9b02";
+  if (magnitude >= 5) {
+    return "red";
   }
   if (magnitude < 5) {
-    return "#98ee00";
-  }
-};
+    return "orange";
+  };
+}
+
   
 // 6. Use the function that determines the radius of the earthquake marker based on its magnitude.
 function getRadius(magnitude) {
   if (magnitude === 0) {
     return 1;
   }
-  return magnitude * 6;
+  return magnitude * 4;
 }
   
 // 7. Creating a GeoJSON layer with the retrieved data that adds a circle to the map 
